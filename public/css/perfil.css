@@ -1,0 +1,237 @@
+@import url(menu.css);
+@import url(footer.css);
+
+
+
+@font-face {
+  font-family: "grendel";
+  src: url("../fuentes/grendel.ttf");
+}
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+ }
+
+
+ .container {
+  width: 100%;
+   position: absolute;
+   top: 65px;
+
+ }
+
+
+ /*CONTENIDO */
+ 
+ #main{
+  margin: 0 auto;
+  width: 100%;
+  height: 825px;
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+
+  .main-container{
+    width: 100%;
+    margin-top:30px;
+    background: rgb(13, 6, 53);
+    border-radius: 5px;
+    float: left;
+  }
+
+/* CONTENEDOR TITULO - EDIT PERFIL */
+  .intro{
+    margin: 0 auto;
+    width: 95%;
+    overflow: hidden;
+    border-bottom: 1px solid black;
+  }
+
+
+
+  h1{
+    float: left;
+    color:white;
+    font-size: 35px;
+    margin-left: 10px;
+  }
+
+  .edit {
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
+  }
+
+  .edit a {
+    font-size:15px;
+    padding: 3px 7px;
+    color: red;
+    background:white;
+    text-decoration: none;
+    border-radius: 3px;
+    text-shadow: #222 0 1px 0;
+  }
+
+  /*CONTENEDOR PROFILE */
+
+  .profile{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .profile h2 {
+  color:white;
+ }
+
+  .profile img {
+    width:130px;
+    float: left;
+    margin-top:25px;
+    margin-left:30px;
+  }
+
+  .block-profile{
+    float: right;
+    width: 40%;
+    margin-top:25px;
+    margin-right: 20px;
+  }
+
+  .block-profile ul {
+    list-style: none;
+    
+  }
+
+  .block-profile ul li {
+    border-bottom: 1px solid white;
+    margin-top:10px;
+    color:white;
+  }
+
+  .block-profile p {
+    display: inline;
+    margin-left: 5px;
+    color:white;
+  }
+
+/* BLOQUE LOGROS  */
+
+.logros{
+  width: 70%;
+  height: 300px;
+  margin: 0 auto;  
+  margin-top: 50px;
+}
+
+.logros h2 {
+  text-align: center;
+  font-size:40px;
+  color:white;
+  text-decoration: underline white;
+}
+
+.block-logros ul{
+  margin: 0  auto;
+  margin-top:30px;
+  display: flex;
+  flex-flow: row wrap;  
+  list-style: none;
+}
+
+.block-logros ul li {
+  margin-left: 10px;
+}
+
+
+/* LISTA DE AMIGOS*/
+
+.friend-list{
+  width: 100%;
+  float: right;
+  margin-top:30px;
+  background: rgb(13, 6, 53);
+  border-radius: 5px;
+}
+
+
+ h2 {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIAS QUERIES */
+
+  @media (min-width:900px) {
+
+
+    .main-container{
+      width: 60%;
+      margin-left: 50px;
+      
+    }
+    .profile{
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .logros{
+      width: 100%;
+    }
+    
+
+    .block-logros ul{
+      flex-flow: row ;
+    }
+
+    .block-logros ul li {
+      margin: 0 auto;
+    }
+
+    .friend-list{
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+     }
+  }
+
+
+  
+  @media (min-width:1180px) {
+
+    .main-container{
+      width: 45%;
+      margin-left: 50px;
+    }
+  
+    .friend-list{
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+     }
+
+  }
