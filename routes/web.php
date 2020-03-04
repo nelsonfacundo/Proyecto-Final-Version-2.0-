@@ -29,6 +29,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/perfil', 'perfilController@index')->name('perfil');
 
+
+
 Route::get('/ranking',function()
 {
     return view('ranking');
