@@ -39,7 +39,10 @@ Route::get('/ranking',function()
 ############## CRUD Categorias ###################
 Route::get('/adminCategorias', 'CategoriasController@index');
 Route::get('/formAgregarCategoria', 'CategoriasController@create');
+Route::get('/formModificarCategoria/{id_cat}', 'CategoriasController@edit');
+Route::post('/modificarCategoria', 'CategoriasController@update');
 Route::post('/agregarCategoria', 'CategoriasController@store');
+Route::get('/adminCategorias/{id_cat}','CategoriasController@destroy');
 
 ############## CRUD Preguntas ###################
 

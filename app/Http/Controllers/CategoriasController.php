@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Categoria;
+use App\Categorias;
 use Illuminate\Http\Request;
 
 class CategoriasController extends Controller
@@ -14,7 +14,7 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-      $categorias = Categoria::paginate(6);
+      $categorias = Categorias::paginate(6);
 
       return view('adminCategorias', [ 'categorias' =>  $categorias ]);
     }
@@ -37,7 +37,7 @@ class CategoriasController extends Controller
      */
     public function store(Request $request)
     {
-      $categoria = new Categoria();
+      $categoria = new Categorias();
       ######## validacion
       $validacion = $request->validate(
           [
@@ -63,12 +63,13 @@ class CategoriasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $id_cat
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+      $categoria = Categorias::find($id);
+      return view('formModificarCategoria', [ 'categoria'=>$categoria ]);
     }
 
     /**
@@ -78,9 +79,13 @@ class CategoriasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+      $Categoria = Categorias::find($request->input('id_cat'));
+      $Categoria->categoria = $request->input('categoria');
+      $Categoria->save();
+      return redirect('/adminCategorias')
+          ->with('mensaje', 'Categoria '.$Categoria->categoria.' modificada con éxito');
     }
 
     /**
@@ -89,8 +94,11 @@ class CategoriasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy( $id)
     {
-        //
+      $categoria = Categorias::find($id);
+      $categoria->delete();
+      return redirect("/adminCategorias");
+
     }
 }

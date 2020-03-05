@@ -6,6 +6,12 @@
 
     @section('main')
 
+      @if( session()->has('mensaje') )
+            <div class="alert alert-success">
+                {{ session()->get('mensaje') }}
+            </div>
+      @endif
+
       <table class="table table-striped table-dark">
           <thead class="thead-dark">
           <tr>
@@ -19,15 +25,15 @@
           <tbody>
           @foreach( $categorias as $categoria )
               <tr>
-                  <td>{{$categoria->id}}</td>
+                  <td>{{$categoria->id_cat}}</td>
                   <td>{{$categoria->categoria}}</td>
                   <td>
-                      <a href="" class="btn btn-warning">
+                      <a href="/formModificarCategoria/{{$categoria->id_cat}}" class="btn btn-warning">
                           Modificar
                       </a>
                   </td>
                   <td>
-                      <a href="" class="btn btn-danger">
+                      <a href="/adminCategorias/{{$categoria->id_cat}}" class="btn btn-danger">
                           Eliminar
                       </a>
                   </td>
