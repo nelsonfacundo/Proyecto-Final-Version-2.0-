@@ -22,7 +22,7 @@
                          @csrf
 
                           <div class="formulario-nombre">
-                            <label for="username">{{ __('Name') }}</label><br>
+                            <label for="username">{{ __('username') }}</label><br>
                                <input id="username" type="text" class="form-control @error('name') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
                                <br>
                                 @error('username')
@@ -30,7 +30,7 @@
                                 @enderror
                           </div>
                           <div class="formulario-email">
-                            <label for="email">{{ __('E-Mail Address') }}</label><br>
+                            <label for="email">{{ __('E-Mail') }}</label><br>
                               <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                               <br>
                                 @error('email')
@@ -39,7 +39,7 @@
                               
                           </div>
                           <div class="formulario-pass">
-                            <label for="password">{{ __('Password') }}</label><br>
+                            <label for="password">{{ __('Contraseña') }}</label><br>
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                                 <br>
                                   @error('password')
@@ -48,7 +48,7 @@
                               
                           </div>
                           <div class="formulario-repass">
-                          <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label><br>
+                          <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmacion de contraseña') }}</label><br>
                           <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                
                           </div>

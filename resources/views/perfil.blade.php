@@ -21,9 +21,15 @@
                     <div class="block-profile">
                         <h2>Informacion:</h2>
                         <ul>
-                            <li>Userame: <p> {{Auth::user()->username}}</p></li>
-                            <li>Email :{{Auth::user()->email}} </li>
-                            <li>Fecha de nacimiento : <p>{{Auth::user()->release_date}}</p></li>
+                            <li>username:<br> 
+                                <p> {{Auth::user()->username}}</p>
+                            </li>
+                            <li>Email :<br>
+                                {{Auth::user()->email}}
+                             </li>
+                            <li>Fecha de nacimiento :<br>
+                             <p>{{Auth::user()->release_date}}</p>
+                            </li>
                         </ul>
                     </div>
                 </div>

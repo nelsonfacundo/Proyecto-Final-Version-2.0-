@@ -17,8 +17,8 @@
 
 
  .container {
+   background-color:black;
   width: 100%;
-  position: relative;
    top: 65px;
 
  }
@@ -27,8 +27,8 @@
  /*CONTENIDO */
  
  #main{
-  margin: 0 auto;
-
+  margin-top:100px;
+  background-color:white;
   width: 100%;
   height: 100%;
   display: flex;
@@ -38,7 +38,7 @@
 
   .main-container{
     width: 100%;
-    height: 70vh;
+    height:90vh;
     margin-top:30px;
     background: rgb(13, 6, 53);
     border-radius: 5px;
@@ -154,7 +154,7 @@
 
 .friend-list{
   width: 100%;
-  height: 70vh;
+  height: 90vh;
   float: right;
   margin-top:30px;
   background: rgb(13, 6, 53);
