@@ -19,9 +19,9 @@
                     <ul>
                         <li><a href="/index">inicio</a></li>
                         <li><a href="ranking.php">ranking</a></li>
-                        <li><a href="perfil.php">perfil</a></li>
-                        <li><a href="faq.php">Faq</a></li>
-                        <li><a href="contacto.php">contactanos</a></li>
+                        <li><a href="/perfil">perfil</a></li>
+                        <li><a href="/faq">Faq</a></li>
+                        <li><a href="/contacto">contactanos</a></li>
                         @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
