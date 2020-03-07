@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Categorias;
+use App\Respuesta;
+use App\Pregunta;
 use Illuminate\Http\Request;
 
 class PreguntasController extends Controller
@@ -13,7 +16,11 @@ class PreguntasController extends Controller
      */
     public function index()
     {
-      return view('listadoPreguntas');
+      $preguntas = Pregunta::with('getRespuesta', 'getCategoria')->get();
+        return view('/listadoPreguntas',
+            [
+                'preguntas'=>$preguntas
+            ]);
     }
 
     /**
@@ -23,7 +30,13 @@ class PreguntasController extends Controller
      */
     public function create()
     {
-        //
+      $respuestas = Respuesta::all();
+      $categorias = Categorias::all();
+      return view('formAgregarPregunta',
+          [
+              'respuestas'=>$respuestas,
+              'categorias'=>$categorias
+          ]);
     }
 
     /**
@@ -37,6 +50,17 @@ class PreguntasController extends Controller
         //
         //$resouesta = new Respuesta;
         //$resuesta->respuesta1 = $request['respusta1'
+        $pregunta = new Pregunta();
+        ######## validacion
+        $validacion = $request->validate(
+            [
+                'pregunta' => 'required|min:3|max:75',
+
+            ]
+        );
+        $pregunta->pregunta = request('pregunta');
+        $pregunta->save();
+        return redirect('/listadoPreguntas')->with('mensaje', 'Pregunta '.$pregunta->pregunta.' agregada con éxito');
     }
 
     /**

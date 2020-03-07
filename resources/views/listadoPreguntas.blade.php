@@ -6,52 +6,36 @@
 
     @section('main')
 
-      <main class="container">
-        <div class="row">
-          <div class="col-12 ">
-            <table class="table table-bordered table-dark">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">Pregunta</th>
-                  <th scope="col">Respuesta</th>
-                  <th scope="col">Categoría</th>
-                  <th scope="col">Modificar</th>
-                  <th scope="col">Eliminar</th>
-                  <td><button type="button" class="btn btn-secondary btn-lg ">Agregar</button></td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>Pregunta</th>
-                  <td>Respuesta</td>
-                  <td>Categoria</td>
-                  <td><a class="btn btn-warning" href="/adminCategorias">Modificar</a></td>
-                  <td><a class="btn btn-danger" href="/adminCategorias">Eliminar</a></td>
-                </tr>
-                <tr>
-                  <th>Pregunta</th>
-                  <td>Respuesta</td>
-                  <td>Categoria</td>
-                  <td><a class="btn btn-warning" href="/adminCategorias">Modificar</a></td>
-                  <td><a class="btn btn-danger" href="/adminCategorias">Eliminar</a></td>
-                </tr>
-                <tr>
-                  <th>Pregunta</th>
-                  <td>Respuesta</td>
-                  <td>Categoria</td>
-                  <td><a class="btn btn-warning" href="/adminCategorias">Modificar</a></td>
-                  <td><a class="btn btn-danger" href="/adminCategorias">Eliminar</a></td>
-                </tr>
-                <tr>
-                  <th>Pregunta</th>
-                  <td>Respuesta</td>
-                  <td>Categoria</td>
-                  <td><a class="btn btn-warning" href="/adminCategorias">Modificar</a></td>
-                  <td><a class="btn btn-danger" href="/adminCategorias">Eliminar</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </main>
+        <table class="table table-striped table-dark">
+            <thead class="thead-dark">
+            <tr>
+                <th>Pregunta</th>
+                <th>Respuesta</th>
+                <th>Categoria</th>
+                <th colspan="2">
+                    <a href="/formAgregarPregunta" class="btn btn-primary">
+                        Agregar
+                    </a>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+        @foreach($preguntas as $pregunta )
+            <tr>
+                <td>{{ $pregunta->pregunta}}</td>
+                <td>
+                    <a href="" class="btn btn-warning">
+                        Modificar
+                    </a>
+                </td>
+                <td>
+                    <a href="" class="btn btn-danger">
+                        Eliminar
+                    </a>
+                </td>
+            </tr>
+        @endforeach
+            </tbody>
+        </table>
+
     @endsection

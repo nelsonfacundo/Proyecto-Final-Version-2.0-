@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCrudTable extends Migration
+class CreatePreguntasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateCrudTable extends Migration
      */
     public function up()
     {
-        Schema::create('crud', function (Blueprint $table) {
-            $table->bigIncrements('id_cat');
+        Schema::create('preguntas', function (Blueprint $table) {
+            $table->bigIncrements('id_preg');
             $table->timestamps();
-            $table->string('categoria');
-
+            $table->string('pregunta');
+            
         });
     }
 
@@ -28,6 +28,6 @@ class CreateCrudTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('crud');
+        Schema::dropIfExists('preguntas');
     }
 }

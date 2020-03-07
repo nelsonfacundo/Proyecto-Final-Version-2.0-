@@ -48,4 +48,7 @@ Route::get('/adminCategorias/{id_cat}','CategoriasController@destroy');
 
 Route::get('/crud', 'PreguntasController@index');
 Route::get('/formAgregarPregunta', 'PreguntasController@create');
+Route::get('/formModificarPregunta/{id_preg}', 'PreguntasController@edit');
+Route::post('/modificarPregunta', 'PreguntasController@update');
 Route::post('/agregarPregunta', 'PreguntasController@store');
+Route::get('/crud/{id_preg}','PreguntasController@destroy');
