@@ -29,6 +29,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/perfil', 'perfilController@index')->name('perfil');
 
+Route::get('/contacto', function(){
+    return view('contacto');
+});
+
+Route::post('/contacto', "ContactoController@agregarMensaje");
 
 
 Route::get('/ranking',function()
