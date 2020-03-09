@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/faq.css">
-    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Work+Sans&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/86f3787a46.js" crossorigin="anonymous"></script>
-    <title></title>
-  </head>
-  <body>
-    <div class="container">
-    <header>
-        <?php require_once("header.php"); ?>
-    </header>
-      </div>
+@extends('layout.plantilla')
+
+    @section('title', 'faq')
+
+
+<head>
+    <link rel="stylesheet" href="{{ asset('css/faq.css')}} ">
+</head>
+
+    @section('main')
+
+
       <div class="contenido">
         <section id="content-all">
           <section id="content-header">
@@ -23,27 +17,22 @@
           </section>
             <div id="cont">
               
-                  <h3>Menu:</h3>
+                  <br>
                     <ul>
-                        <li><a href="#">En que consiste el juego?</a></li>
-                        <li class="respuesta">"Es un juego de preguntas que provara tu ingenio y conocimiento sobre cultura general."</li>
-                        <li><a href="#">Como se suman puntos?</a></li>
-                        <li class="respuesta">"Contestando bien las respuestas"</liclass="respuesta">
-                        <li><a href="#">Como editar mi foto de perfil?</a></li>
-                        <li class="respuesta">"Ir a perfil y seleccionar cambiar foto."</liclass="respuesta">
-                        <li><a href="#">-Como crear usuario?</a></li>
-                        <li class="respuesta">"Ve a la pagina de <a href="#">Inicio.php</a> y selecciona crear usuario"</liclass="respuesta">
-                        <li><a href="#">Como llegar al primer puesto?</a></li>
-                        <li class="respuesta">"Respondiendo la mayor cantidad de preguntas correctas!"</liclass="respuesta">
+                        <li class="pregunta">¿En qué consiste el juego?</li>
+                        <li class="respuesta">"Es un juego de preguntas que provará tu ingenio y conocimiento sobre cultura general."</li>
+                        <li class="pregunta">¿Cómo se suman puntos?</li>
+                        <li class="respuesta">"Contestando bien las respuestas, obviamente"
+                        <li class="pregunta">¿Cómo saber si contesté bien la pregunta?</li>
+                        <li class="respuesta">"El color de la pantalla cambiará a verde (correcto) o rojo (incorrecto)."
+                        <li class="pregunta">¿Cómo crear usuario?</li>
+                        <li class="respuesta">"Ve a la pagina de <a href="{{ route('register') }}">{{ __('Register') }}</a> y selecciona crear usuario"
+                        <li class="pregunta">¿Cómo llegar al primer puesto?</li>
+                        <li class="respuesta">"Respondiendo la mayor cantidad de preguntas correctas!"
                     </ul>
                 </div>    
         </section>
       </div>
-      <div id="footer">
-      <footer>
-       <?php require_once("footer.php")?>
-       </footer>
-      </div>
-    </div>
-  </body>
-</html>
+
+
+    @endsection

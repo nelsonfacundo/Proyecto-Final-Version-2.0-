@@ -36,6 +36,11 @@ Route::get('/ranking',function()
     return view('ranking');
 });
 
+Route::get('/faq',function()
+{
+    return view('faq');
+});
+
 ############## CRUD Categorias ###################
 Route::get('/adminCategorias', 'CategoriasController@index');
 Route::get('/formAgregarCategoria', 'CategoriasController@create');
