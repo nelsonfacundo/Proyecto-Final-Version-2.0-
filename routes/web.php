@@ -21,13 +21,6 @@ Route::get('/index',function(){
 });
 
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-Route::get('/perfil', 'perfilController@index')->name('perfil');
 
 Route::get('/contacto', function(){
     return view('contacto');
@@ -45,6 +38,18 @@ Route::get('/faq',function()
 {
     return view('faq');
 });
+
+
+
+//------PERFIL USUARIO-----------////
+Route::get('/perfil', 'perfilController@index')->name('perfil');
+
+Auth::routes();
+
+//------------PERFILL ADMIN------------//
+Route::get('/home', 'HomeController@index')->name('home','Admin');
+
+
 
 ############## CRUD Categorias ###################
 Route::get('/adminCategorias', 'CategoriasController@index');
