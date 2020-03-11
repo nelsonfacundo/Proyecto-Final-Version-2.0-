@@ -15,7 +15,7 @@
       <table class="table table-striped table-dark">
           <thead class="thead-dark">
           <tr>
-              <th>id</th>
+              <th>ID</th>
               <th>Categoria</th>
               <th colspan="2">
                   <a href="/formAgregarCategoria" class="btn btn-primary">Agregar</a>

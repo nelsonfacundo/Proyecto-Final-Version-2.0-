@@ -9,6 +9,7 @@
         <table class="table table-striped table-dark">
             <thead class="thead-dark">
             <tr>
+                <th>ID</th>
                 <th>Pregunta</th>
                 <th>Respuesta</th>
                 <th>Categoria</th>
@@ -22,7 +23,9 @@
             <tbody>
         @foreach($preguntas as $pregunta )
             <tr>
-                <td>{{ $pregunta->pregunta}}</td>
+                <td>{{$pregunta->id_preg}}</td>
+                <td>{{$pregunta->pregunta}}</td>
+                <td>{{$pregunta->getCategoria->categorias}}</td>
                 <td>
                     <a href="" class="btn btn-warning">
                         Modificar

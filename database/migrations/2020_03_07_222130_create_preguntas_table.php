@@ -17,7 +17,9 @@ class CreatePreguntasTable extends Migration
             $table->bigIncrements('id_preg');
             $table->timestamps();
             $table->string('pregunta');
-            
+
+            $table->unsignedBigInteger('cat_id');
+            $table->foreign('cat_id')->references('id_cat')->on('categorias');
         });
     }
 
@@ -28,6 +30,7 @@ class CreatePreguntasTable extends Migration
      */
     public function down()
     {
+        //$table->dropForeign('preguntas_cat_id_foreign');
         Schema::dropIfExists('preguntas');
     }
 }

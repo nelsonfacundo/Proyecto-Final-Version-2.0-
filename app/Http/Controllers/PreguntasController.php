@@ -17,9 +17,11 @@ class PreguntasController extends Controller
     public function index()
     {
       $preguntas = Pregunta::with('getRespuesta', 'getCategoria')->get();
+      $categorias = Categorias::all();
         return view('/listadoPreguntas',
             [
-                'preguntas'=>$preguntas
+                'preguntas'=>$preguntas,
+                'categorias'=>$categorias
             ]);
     }
 
@@ -30,12 +32,13 @@ class PreguntasController extends Controller
      */
     public function create()
     {
-      $respuestas = Respuesta::all();
+      //$respuestas = Respuesta::all();
       $categorias = Categorias::all();
       return view('formAgregarPregunta',
           [
-              'respuestas'=>$respuestas,
+              //'respuestas'=>$respuestas,
               'categorias'=>$categorias
+
           ]);
     }
 
@@ -47,20 +50,24 @@ class PreguntasController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        //$resouesta = new Respuesta;
-        //$resuesta->respuesta1 = $request['respusta1'
+        //dd($request->all());
+        //$respuesta = new Respuesta;
+        //$respuesta->respuesta1 = $request['respusta1'
         $pregunta = new Pregunta();
+        $categoria = Categorias::all();
         ######## validacion
         $validacion = $request->validate(
             [
                 'pregunta' => 'required|min:3|max:75',
-
+                'categoria'=>'min:3'
             ]
         );
         $pregunta->pregunta = request('pregunta');
+        $categoria->categoria = request('categoria');
+
         $pregunta->save();
-        return redirect('/listadoPreguntas')->with('mensaje', 'Pregunta '.$pregunta->pregunta.' agregada con éxito');
+
+        return redirect('/crud')->with('mensaje', 'Pregunta '.$pregunta->pregunta.' agregada con éxito');
     }
 
     /**

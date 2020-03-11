@@ -13,7 +13,7 @@
 
             <div class="form-group">
                 <label for="pregunta">Pregunta:</label>
-                <input type="text" class="form-control" name="pregunta"  value="{{ old('pregunta') }}" id="pregunta" placeholder="Ingrese Pregunta" required>
+                <input type="text" class="form-control" name="pregunta"  value="{{ old('pregunta') }}" id="id_preg" placeholder="Ingrese Pregunta" required>
             </div>
 
             <div class="form-group">
@@ -28,9 +28,9 @@
             <label>Categoría:</label>
             <select name="id_cat" class="form-control" required>
                 <option value="">Seleccione una Categoría</option>
-        @foreach( $categorias as $categoria )
+              @foreach( $categorias as $categoria )
                 <option value="{{ $categoria->id_cat }}">{{ $categoria->categoria }}</option>
-        @endforeach
+              @endforeach
             </select>
             </div>
 

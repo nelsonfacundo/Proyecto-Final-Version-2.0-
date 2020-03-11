@@ -16,11 +16,10 @@ class CreateRespuestasTable extends Migration
         Schema::create('respuestas', function (Blueprint $table) {
             $table->bigIncrements('id_respuesta');
             $table->timestamps();
+            $table->string('verdadera');
             $table->string('respuesta1');
             $table->string('respuesta2');
             $table->string('respuesta3');
-            $table->string('respuesta4');
-
         });
     }
 
