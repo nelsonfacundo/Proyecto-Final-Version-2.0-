@@ -25,7 +25,8 @@
             <tr>
                 <td>{{$pregunta->id_preg}}</td>
                 <td>{{$pregunta->pregunta}}</td>
-                <td>{{$pregunta->getCategoria->categorias}}</td>
+                <td>Wesa</td>
+                <td>Wasa</td>
                 <td>
                     <a href="" class="btn btn-warning">
                         Modificar

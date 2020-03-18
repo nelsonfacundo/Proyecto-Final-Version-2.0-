@@ -2,6 +2,8 @@
     width: 100%;
     height: 100px;
     background: rgb(13, 6, 53);
+    position: fixed;
+    bottom: 0;
   }
 
   #footer img {

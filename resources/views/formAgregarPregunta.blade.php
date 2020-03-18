@@ -39,6 +39,7 @@
                 Agregar Pregunta
             </button>
             <a href="/crud" class="btn btn-outline-secondary ml-3">
+              <i class="fas fa-reply mr-2"></i>
                 Volver al listado de preguntas
             </a>
 

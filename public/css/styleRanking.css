@@ -4,7 +4,6 @@
   src: url("../fuentes/grendel.ttf");
 }
 
-
 *{
   padding: 0;
   margin: 0;
@@ -14,58 +13,163 @@
 body
 {
   font-family: grendel;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   color: white;
-  background-image: url("../img/fondo.jpg");
+  overflow: hidden;
+  background-image: linear-gradient(to left, #8942A8, #BA382F);
 }
 
-.container
+.contenido
+{
+  max-width: 50%;
+  width: 100%;
+  margin: 125px auto;
+  background-color: black;
+  background-size: 100% auto;
+  min-height: 140px;
+  text-align: center;
+  position: relative;
+}
+
+/*Efecto texto*/
+span
 {
   width: 100%;
+  display: block;
+  text-transform: uppercase;
+}
+.text1
+{
+  color: red;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  background: black;
+  position: relative;
+  animation: texto 3s 1;
+}
+.text2
+{
+  font-size: 30px;
+  color: white;
+}
+@keyframes texto {
+  0%
+  {
+    color: black;
+    margin-bottom: -40px;
+  }
+  30%
+  {
+    letter-spacing: 25px;
+    margin-bottom: -40px;
+  }
+  85%
+  {
+    letter-spacing: 8px;
+    margin-bottom: -40px;
+  }
+}
+
+/*Efecto transición*/
+@keyframes transition
+{
+  from
+  {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to
+  {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .contenido
 {
-  max-width: 1000px;
+  animation: transition 2s;
+}
+
+/*Efecto fondo*/
+
+.box-area
+{
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  margin: 125px auto;
+  height: 100%;
+  overflow: hidden;
 }
-#content-all
+.box-area li
 {
-  background-color: red;
-  background-size: 100% auto;
-  min-height: 140px;
-}
-#content-header
-{
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: top;
-}
-#content-footer
-{
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: bottom;
-  padding: 30px 50px;
-}
-section
-{
+  position: absolute;
   display: block;
+  list-style: none;
+  bottom: -20px;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animacionFondo 20s linear infinite;
+  /*clip-path: polygon(0% 0%, 0% 100%, 20% 100%, 20% 20%, 80% 20%, 80% 80%, 20% 80%, 20% 100%, 100% 100%, 100% 0%);
+  */
 }
-h2
+
+.box-area li:nth-child(1)
 {
-  font-size: 50px;
-  width: 100%;
-  text-align: center;
-  color: #a9a87f;
-  display: block;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  left: 86%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
 }
-.activo
+
+.box-area li:nth-child(2)
 {
-    text-shadow: 1px 0px 20px;
+  left: 12%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 1.5s;
+  animation-duration: 10s;
+}
+.box-area li:nth-child(3)
+{
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 5.5s;
+}
+.box-area li:nth-child(4)
+{
+  left: 70%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+.box-area li:nth-child(5)
+{
+  left: 65%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 0s;
+}
+.box-area li:nth-child(6)
+{
+  left: 15%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3.5s;
+}
+@keyframes animacionFondo
+{
+  0%
+  {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100%
+  {
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
 }

@@ -7,9 +7,34 @@
     @section('main')
 
       @if( session()->has('mensaje') )
-            <div class="alert alert-success">
-                {{ session()->get('mensaje') }}
-            </div>
+            <script>
+            Swal.fire({
+              icon: 'success',
+              title: 'Agregada',
+              text: '{{ session()->get('mensaje') }}',
+            })
+            </script>
+      @endif
+      @if( session()->has('cuidado') )
+            <script>
+            Swal.fire({
+              title: 'Are you sure?',
+              text: "You won't be able to revert this!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+              if (result.value) {
+                Swal.fire(
+                  'Deleted!',
+                  'Your file has been deleted.',
+                  'success'
+                )
+              }
+            })
+            </script>
       @endif
 
       <table class="table table-striped table-dark">
@@ -41,8 +66,5 @@
           @endforeach
           </tbody>
       </table>
-
       {{ $categorias->links() }}
-
-
   @endsection

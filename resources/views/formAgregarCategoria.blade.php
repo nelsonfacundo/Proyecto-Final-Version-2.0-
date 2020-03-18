@@ -19,19 +19,18 @@
                   Agregar Categoria
               </button>
               <a href="/adminCategorias" class="btn btn-outline-secondary ml-3">
+                  <i class="fas fa-reply mr-2"></i>
                   Volver al panel de categorías
               </a>
 
               @if(count($errors))
-                  <div class="form-group mt-3">
-                      <div class="alert alert-danger">
-                          <ul>
-                              @foreach($errors->all() as $error)
-                                  <li>{{$error}}</li>
-                              @endforeach
-                          </ul>
-                      </div>
-                  </div>
+                <script>
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Mal ahí',
+                  text: 'Capo te olvidaste la categoría'
+                })
+                </script>
               @endif
 
           </form>

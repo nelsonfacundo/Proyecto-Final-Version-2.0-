@@ -14,7 +14,7 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-      $categorias = Categorias::paginate(6);
+      $categorias = Categorias::paginate(10);
 
       return view('adminCategorias', [ 'categorias' =>  $categorias ]);
     }
@@ -96,9 +96,11 @@ class CategoriasController extends Controller
      */
     public function destroy( $id)
     {
-      $categoria = Categorias::find($id);
-      $categoria->delete();
-      return redirect("/adminCategorias");
+      $Categoria = Categorias::find($id);
+      $Categoria->delete();
+      return redirect("/adminCategorias")
+      ->with('cuidado', 'Categoria '.$Categoria->categoria.' modificada con éxito');
+
 
     }
 }
