@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/crud.css')}} ">
+    <link rel="stylesheet" href="/css/styleCrud.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -22,9 +23,24 @@
                 <a class="py-2" href="/home">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="Yellow" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mx-auto"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
                 </a>
-                <a class="py-2 d-md-inline-block" href="/home">Inicio</a>
-                <a class="py-2 d-md-inline-block" href="/crud">Listado Preguntas</a>
-                <a class="py-2 d-md-inline-block" href="/adminCategorias">Admin Categorías</a>
+                <a class="py-2 d-md-inline-block" href="/home">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Inicio</a>
+                <a class="py-2 d-md-inline-block" href="/crud">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Listado Preguntas</a>
+                <a class="py-2 d-md-inline-block" href="/adminCategorias">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Admin Categorías</a>
             </div>
         </nav>
 

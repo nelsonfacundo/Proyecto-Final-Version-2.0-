@@ -17,11 +17,9 @@ class PreguntasController extends Controller
     public function index()
     {
       $preguntas = Pregunta::with('getRespuesta', 'getCategoria')->get();
-      $categorias = Categorias::all();
         return view('/listadoPreguntas',
             [
                 'preguntas'=>$preguntas,
-                'categorias'=>$categorias
             ]);
     }
 
@@ -63,7 +61,8 @@ class PreguntasController extends Controller
             ]
         );
         $pregunta->pregunta = request('pregunta');
-        $categoria->categoria = request('categoria');
+
+        $categoria->id_cat = request('id_cat');
 
         $pregunta->save();
 

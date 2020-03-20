@@ -18,7 +18,7 @@ class CreatePreguntasTable extends Migration
             $table->timestamps();
             $table->string('pregunta');
 
-            $table->unsignedBigInteger('cat_id');
+            $table->unsignedBigInteger('cat_id')->nullable()->unsigned();
             $table->foreign('cat_id')->references('id_cat')->on('categorias');
         });
     }

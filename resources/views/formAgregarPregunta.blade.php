@@ -7,17 +7,17 @@
 
     @section('h1', 'Alta de una nueva Pregunta')
 
-        <div class="card bg-light col-md-7 mt-5 p-3 mx-auto">
+        <div class="card col-md-7 mt-5 p-3 mx-auto">
         <form action="/agregarPregunta" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">
-                <label for="pregunta">Pregunta:</label>
+                <label>Pregunta</label>
                 <input type="text" class="form-control" name="pregunta"  value="{{ old('pregunta') }}" id="id_preg" placeholder="Ingrese Pregunta" required>
             </div>
 
             <div class="form-group">
-              <label>Respuestas:</label>
+              <label>Respuestas</label>
               <input type="text" class="form-control" name="respuesta1"  value="{{ old('respuesta') }}" id="id_respuesta" placeholder="Ingrese Respuesta" required>
               <input type="text" class="form-control" name="respuesta2"  value="{{ old('respuesta') }}" id="id_respuesta" placeholder="Ingrese Respuesta" required>
               <input type="text" class="form-control" name="respuesta3"  value="{{ old('respuesta') }}" id="id_respuesta" placeholder="Ingrese Respuesta" required>
@@ -25,11 +25,11 @@
             </div>
 
             <div class="form-group">
-            <label>Categoría:</label>
+            <label>Categoría</label>
             <select name="id_cat" class="form-control" required>
                 <option value="">Seleccione una Categoría</option>
               @foreach( $categorias as $categoria )
-                <option value="{{ $categoria->id_cat }}">{{ $categoria->categoria }}</option>
+                <option value="{{ $categoria->id_cat }}">{{ $categoria->categoria}}</option>
               @endforeach
             </select>
             </div>

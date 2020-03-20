@@ -17,11 +17,42 @@
                 <label class="fas fa-bars" for="menu-bar"></label>
                 <nav class="menu">
                   <ul>
-                    <li><a href="/index">inicio</a></li>
-                    <li><a href="/ranking">ranking</a></li>
-                    <li><a href="/perfil">perfil</a></li>
-                    <li><a href="/faq">Faq</a></li>
-                    <li><a href="/contacto">CONTACTO</a></li>
+                    <li><a href="/index">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      inicio
+                    </a>
+                    </li>
+                    <li><a href="/ranking">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      ranking
+                    </a>
+                    </li>
+                    <li><a href="/perfil">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      perfil
+                    </a>
+                  </li>
+                    <li><a href="/faq">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      Faq</a></li>
+                    <li><a href="/contacto">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      CONTACTO</a></li>
                     @guest
 
                       <li class="nav-item">
@@ -60,11 +91,36 @@
               <img src="img/logo.jpg">
               <div class="block-footer">
                 <ul>
-                  <li><a href="/index">INICIO</a></li>
-                  <li><a href="/ranking">RANKING</a></li>
-                  <li><a href="/perfil">PERFIL</a></li>
-                  <li><a href="/faq">FAQ</a></li>
-                  <li><a href="/contacto">CONTACTO</a></li>
+                  <li><a href="/index">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    INICIO</a></li>
+                  <li><a href="/ranking">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    RANKING</a></li>
+                  <li><a href="/perfil">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    PERFIL</a></li>
+                  <li><a href="/faq">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    FAQ</a></li>
+                  <li><a href="/contacto">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    CONTACTO</a></li>
                 </ul>
               </div>
         </div>

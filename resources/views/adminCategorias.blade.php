@@ -6,6 +6,8 @@
 
     @section('main')
 
+      <p>Listado de Categorías</p>
+
       @if( session()->has('mensaje') )
             <script>
             Swal.fire({

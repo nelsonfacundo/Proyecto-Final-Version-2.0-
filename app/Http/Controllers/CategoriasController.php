@@ -99,8 +99,6 @@ class CategoriasController extends Controller
       $Categoria = Categorias::find($id);
       $Categoria->delete();
       return redirect("/adminCategorias")
-      ->with('cuidado', 'Categoria '.$Categoria->categoria.' modificada con éxito');
-
-
+      ->with('mensaje', 'Categoria '.$Categoria->categoria.' eliminada con éxito');
     }
 }

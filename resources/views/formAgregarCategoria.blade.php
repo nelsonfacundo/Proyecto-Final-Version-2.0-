@@ -5,8 +5,8 @@
     @section('h1', 'formAgregarCategoria')
 
     @section('main')
-
-      <div class="card bg-light col-md-7 mt-5 p-3 mx-auto">
+      <p>Agregar Categoría</p>
+      <div class="card col-md-7 mt-5 p-3 mx-auto">
           <form action="/agregarCategoria" method="post" >
               @csrf
 
@@ -14,7 +14,7 @@
                   <label for="categoria">Categoria:</label>
                   <input type="text" class="form-control" name="categoria"  value="{{ old('categoria') }}" id="categoria" placeholder="Nombre de la Categoria">
               </div>
-              <button type="submit" class="btn btn-dark px-4">
+              <button type="submit" class="btn px-4">
                   <i class="far fa-plus-square fa-lg mr-2"></i>
                   Agregar Categoria
               </button>

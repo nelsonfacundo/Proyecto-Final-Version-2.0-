@@ -6,6 +6,7 @@
 
     @section('main')
 
+        <p>Bienvenido al ABM</p>
         <table class="table table-striped table-dark">
             <thead class="thead-dark">
             <tr>
@@ -26,7 +27,8 @@
                 <td>{{$pregunta->id_preg}}</td>
                 <td>{{$pregunta->pregunta}}</td>
                 <td>Wesa</td>
-                <td>Wasa</td>
+                <td>wesa</td>
+
                 <td>
                     <a href="" class="btn btn-warning">
                         Modificar
