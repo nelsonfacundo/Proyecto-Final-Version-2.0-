@@ -62,7 +62,7 @@ class PreguntasController extends Controller
         );
         $pregunta->pregunta = request('pregunta');
 
-        $categoria->id_cat = request('id_cat');
+        $pregunta->cat_id = request('id_cat');
 
         $pregunta->save();
 
@@ -88,7 +88,8 @@ class PreguntasController extends Controller
      */
     public function edit($id)
     {
-        //
+      $pregunta = Pregunta::find($id);
+      return view('formModificarPregunta', [ 'pregunta'=>$pregunta ]);
     }
 
     /**
@@ -98,9 +99,14 @@ class PreguntasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+      $Pregunta = Pregunta::find($request->input('id_preg'));
+      $Pregunta->pregunta = $request->input('pregunta');
+      $Pregunta->pregunta = $request->input('cat_id');
+      $Pregunta->save();
+      return redirect('/crud')
+          ->with('mensaje', 'Pregunta '.$Pregunta->pregunta.' modificada con éxito');
     }
 
     /**
@@ -111,6 +117,9 @@ class PreguntasController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $Pregunta = Pregunta::find($id);
+      $Pregunta->delete();
+      return redirect("/crud")
+      ->with('mensajeEliminar', 'Pregunta '.$Pregunta->pregunta.' eliminada con éxito');
     }
 }

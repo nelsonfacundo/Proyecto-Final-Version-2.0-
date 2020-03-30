@@ -6,6 +6,25 @@
 
     @section('main')
 
+      @if( session()->has('mensaje') )
+            <script>
+            Swal.fire({
+              icon: 'success',
+              title: 'Agregada',
+              text: '{{ session()->get('mensaje') }}',
+            })
+            </script>
+      @endif
+      @if( session()->has('mensajeEliminar') )
+            <script>
+            Swal.fire({
+              icon: 'success',
+              title: 'Eliminada',
+              text: '{{ session()->get('mensajeEliminar') }}',
+            })
+            </script>
+      @endif
+
         <p>Bienvenido al ABM</p>
         <table class="table table-striped table-dark">
             <thead class="thead-dark">
@@ -26,18 +45,32 @@
             <tr>
                 <td>{{$pregunta->id_preg}}</td>
                 <td>{{$pregunta->pregunta}}</td>
-                <td>Wesa</td>
                 <td>wesa</td>
+                <td>{{$pregunta->getCategoria->categoria}}</td>
 
                 <td>
-                    <a href="" class="btn btn-warning">
+                    <a href="/formModificarPregunta/{{$pregunta->id_preg}}" class="btn btn-warning">
                         Modificar
                     </a>
                 </td>
                 <td>
-                    <a href="" class="btn btn-danger">
-                        Eliminar
-                    </a>
+                  <a id="eliminarPreg" href="/crud/{{$pregunta->id_preg}}" class="btn btn-danger">
+                      Eliminar
+                      <script>
+                      let eliminarPreg = document.querySelector('#eliminarPreg');
+                      eliminarPreg.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        Swal.fire({
+                          title: '¿Estás seguro que querés eliminar la pregunta?',
+                          icon: 'warning',
+                          showCancelButton: true,
+                          confirmButtonColor: '#3085D6',
+                          cancelButtonColor: '#d33',
+                          confirmButtonText: '<a href="/crud/{{$pregunta->id_preg}}">Borrar Pregunta</a>'
+                        })
+                      })
+                    </script>
+                  </a>
                 </td>
             </tr>
         @endforeach

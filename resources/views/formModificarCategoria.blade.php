@@ -1,8 +1,8 @@
 @extends('layout.crudPlantilla')
 
-    @section('title', 'Formulario de modificación una Marca')
+    @section('title', 'Formulario de modificación de una Categoría')
 
-    @section('h1', 'Fornulario de modificación una Marca')
+    @section('h1', 'Formulario de modificación de una Categoría')
 
     @section('main')
       <p>Modificar Categoría</p>

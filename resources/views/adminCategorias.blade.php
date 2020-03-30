@@ -17,24 +17,12 @@
             })
             </script>
       @endif
-      @if( session()->has('cuidado') )
+      @if( session()->has('mensajeEliminar') )
             <script>
             Swal.fire({
-              title: 'Are you sure?',
-              text: "You won't be able to revert this!",
-              icon: 'warning',
-              showCancelButton: true,
-              confirmButtonColor: '#3085d6',
-              cancelButtonColor: '#d33',
-              confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-              if (result.value) {
-                Swal.fire(
-                  'Deleted!',
-                  'Your file has been deleted.',
-                  'success'
-                )
-              }
+              icon: 'success',
+              title: 'Eliminada',
+              text: '{{ session()->get('mensajeEliminar') }}',
             })
             </script>
       @endif
@@ -60,9 +48,24 @@
                       </a>
                   </td>
                   <td>
-                      <a href="/adminCategorias/{{$categoria->id_cat}}" class="btn btn-danger">
+                      <a id="eliminarCat" href="/adminCategorias/{{$categoria->id_cat}}" class="btn btn-danger">
                           Eliminar
+                          <script>
+                          let eliminarCat = document.querySelector('#eliminarCat');
+                          eliminarCat.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            Swal.fire({
+                              title: '¿Estás seguro que querés eliminar la categoría?',
+                              icon: 'warning',
+                              showCancelButton: true,
+                              confirmButtonColor: '#3085D6',
+                              cancelButtonColor: '#d33',
+                              confirmButtonText: '<a href="/adminCategorias/{{$categoria->id_cat}}">Borrar categoría</a>'
+                            })
+                          })
+                        </script>
                       </a>
+
                   </td>
               </tr>
           @endforeach

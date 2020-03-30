@@ -94,11 +94,11 @@ class CategoriasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
-    {
-      $Categoria = Categorias::find($id);
-      $Categoria->delete();
-      return redirect("/adminCategorias")
-      ->with('mensaje', 'Categoria '.$Categoria->categoria.' eliminada con éxito');
-    }
+     public function destroy($id)
+     {
+       $Categoria = Categorias::find($id);
+       $Categoria->delete();
+       return redirect("/adminCategorias")
+       ->with('mensajeEliminar', 'Categoria '.$Categoria->categoria.' eliminada con éxito');
+     }
 }

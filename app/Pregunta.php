@@ -14,6 +14,6 @@ class Pregunta extends Model
 
   public function getCategoria()
   {
-      return $this->belongsTo('App\Categorias', 'id_cat', 'cat_id');
+      return $this->belongsTo('App\Categorias', 'cat_id', 'id_cat');
   }
 }
