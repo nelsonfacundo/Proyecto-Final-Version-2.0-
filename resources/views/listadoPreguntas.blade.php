@@ -54,11 +54,11 @@
                     </a>
                 </td>
                 <td>
-                  <a id="eliminarPreg" href="/crud/{{$pregunta->id_preg}}" class="btn btn-danger">
+                  <a id="eliminarPregunta" href="/crud/{{$pregunta->id_preg}}" class="btn btn-danger">
                       Eliminar
                       <script>
-                      let eliminarPreg = document.querySelector('#eliminarPreg');
-                      eliminarPreg.addEventListener('click', function(event) {
+                      let eliminarPregunta = document.querySelector('#eliminarPregunta');
+                      eliminarPregunta.addEventListener('click', function(event) {
                         event.preventDefault();
                         Swal.fire({
                           title: '¿Estás seguro que querés eliminar la pregunta?',
@@ -76,5 +76,5 @@
         @endforeach
             </tbody>
         </table>
-
+        {{ $preguntas->links() }}
     @endsection

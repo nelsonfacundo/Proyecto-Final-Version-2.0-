@@ -48,11 +48,11 @@
                       </a>
                   </td>
                   <td>
-                      <a id="eliminarCat" href="/adminCategorias/{{$categoria->id_cat}}" class="btn btn-danger">
+                      <a id="eliminarCategoria" href="/adminCategorias/{{$categoria->id_cat}}" class="btn btn-danger">
                           Eliminar
                           <script>
-                          let eliminarCat = document.querySelector('#eliminarCat');
-                          eliminarCat.addEventListener('click', function(event) {
+                          let eliminarCategoria = document.querySelector('#eliminarCategoria');
+                          eliminarCategoria.addEventListener('click', function(event) {
                             event.preventDefault();
                             Swal.fire({
                               title: '¿Estás seguro que querés eliminar la categoría?',

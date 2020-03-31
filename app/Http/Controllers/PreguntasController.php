@@ -18,6 +18,7 @@ class PreguntasController extends Controller
     {
       $preguntas = Pregunta::with('getCategoria')->get();
       $preguntas = Pregunta::with('getRespuesta')->get();
+      $preguntas = Pregunta::paginate(8);
         return view('/listadoPreguntas',
             [
                 'preguntas'=>$preguntas,
@@ -115,7 +116,7 @@ class PreguntasController extends Controller
 
       $Pregunta->pregunta = $request->input('pregunta');
       $Pregunta->cat_id = $request->input('cat_id');
-      
+
       $Pregunta->save();
       return redirect('/crud')
           ->with('mensaje', 'Pregunta '.$Pregunta->pregunta.' modificada con éxito');
