@@ -31,7 +31,7 @@
             <tr>
                 <th>ID</th>
                 <th>Pregunta</th>
-                <th>Respuesta</th>
+                <th>Respuesta Correcta</th>
                 <th>Categoria</th>
                 <th colspan="2">
                     <a href="/formAgregarPregunta" class="btn btn-primary">
@@ -45,7 +45,7 @@
             <tr>
                 <td>{{$pregunta->id_preg}}</td>
                 <td>{{$pregunta->pregunta}}</td>
-                <td>wesa</td>
+                <td>{{$pregunta->getRespuesta->verdadera}}</td>
                 <td>{{$pregunta->getCategoria->categoria}}</td>
 
                 <td>

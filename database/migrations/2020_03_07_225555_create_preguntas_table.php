@@ -19,7 +19,10 @@ class CreatePreguntasTable extends Migration
             $table->string('pregunta');
 
             $table->unsignedBigInteger('cat_id')->nullable()->unsigned();
-            $table->foreign('cat_id')->references('id_cat')->on('categorias');
+            $table->foreign('cat_id')->references('id_cat')->on('categorias')->onDelete('cascade');
+
+            $table->unsignedBigInteger('respuesta_id')->nullable()->unsigned();
+            $table->foreign('respuesta_id')->references('id_respuesta')->on('respuestas')->onDelete('cascade');
         });
     }
 
@@ -30,6 +33,7 @@ class CreatePreguntasTable extends Migration
      */
     public function down()
     {
+        //$table->dropForeign('preguntas_respuesta_id_foreign');
         //$table->dropForeign('preguntas_cat_id_foreign');
         Schema::dropIfExists('preguntas');
     }

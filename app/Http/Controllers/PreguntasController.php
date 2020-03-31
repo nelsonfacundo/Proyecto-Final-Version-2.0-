@@ -17,6 +17,7 @@ class PreguntasController extends Controller
     public function index()
     {
       $preguntas = Pregunta::with('getCategoria')->get();
+      $preguntas = Pregunta::with('getRespuesta')->get();
         return view('/listadoPreguntas',
             [
                 'preguntas'=>$preguntas,
@@ -53,16 +54,17 @@ class PreguntasController extends Controller
             [
                 'pregunta' =>'required|min:3|max:75',
                 'categoria'=>'min:3',
-                'verdadera'=>'required|min:3',
-                'respuesta1'=>'required|min:3',
-                'respuesta2'=>'required|min:3',
-                'respuesta3'=>'required|min:3'
             ]
         );
+        $respuesta->verdadera = request('verdadera');
+        $respuesta->respuesta1 = request('respuesta1');
+        $respuesta->respuesta2 = request('respuesta2');
+        $respuesta->respuesta3 = request('respuesta3');
+        $respuesta->save();
+
         $pregunta->pregunta = request('pregunta');
-
         $pregunta->cat_id = request('id_cat');
-
+        $pregunta->respuesta_id = $respuesta->id_respuesta;
         $pregunta->save();
 
         return redirect('/crud')->with('mensaje', 'Pregunta '.$pregunta->pregunta.' agregada con éxito');
@@ -88,8 +90,9 @@ class PreguntasController extends Controller
     public function edit($id)
     {
       $pregunta = Pregunta::find($id);
+      $respuesta = Respuesta::find($id);
       $categorias = Categorias::all();
-      return view('formModificarPregunta', [ 'pregunta'=>$pregunta, 'categorias'=>$categorias ]);
+      return view('formModificarPregunta', [ 'pregunta'=>$pregunta, 'categorias'=>$categorias, 'respuesta'=>$respuesta]);
     }
 
     /**
@@ -102,8 +105,17 @@ class PreguntasController extends Controller
     public function update(Request $request)
     {
       $Pregunta = Pregunta::find($request->input('id_preg'));
+      $respuesta = Respuesta::find($request->input('id_respuesta'));
+
+      $respuesta->verdadera = $request->input('verdadera');
+      $respuesta->respuesta1 = $request->input('respuesta1');
+      $respuesta->respuesta2 = $request->input('respuesta2');
+      $respuesta->respuesta3 = $request->input('respuesta3');
+      $respuesta->save();
+
       $Pregunta->pregunta = $request->input('pregunta');
       $Pregunta->cat_id = $request->input('cat_id');
+      
       $Pregunta->save();
       return redirect('/crud')
           ->with('mensaje', 'Pregunta '.$Pregunta->pregunta.' modificada con éxito');
@@ -118,7 +130,9 @@ class PreguntasController extends Controller
     public function destroy($id)
     {
       $Pregunta = Pregunta::find($id);
+      $respuesta = Respuesta::find($id);
       $Pregunta->delete();
+      $respuesta->delete();
       return redirect("/crud")
       ->with('mensajeEliminar', 'Pregunta '.$Pregunta->pregunta.' eliminada con éxito');
     }
