@@ -13,15 +13,15 @@
 
             <div class="form-group">
                 <label>Pregunta</label>
-                <input type="text" class="form-control" name="pregunta"  value="{{ old('pregunta') }}" id="id_preg" placeholder="Ingrese Pregunta" required>
+                <input type="text" class="form-control" name="pregunta"  value="{{ old('pregunta') }}" id="pregunta" placeholder="Ingrese Pregunta" required>
             </div>
 
             <div class="form-group">
               <label>Respuestas</label>
-              <input type="text" class="form-control" name="respuesta1"  value="{{ old('respuesta') }}" id="id_respuesta" placeholder="Ingrese Respuesta" required>
-              <input type="text" class="form-control" name="respuesta2"  value="{{ old('respuesta') }}" id="id_respuesta" placeholder="Ingrese Respuesta" required>
-              <input type="text" class="form-control" name="respuesta3"  value="{{ old('respuesta') }}" id="id_respuesta" placeholder="Ingrese Respuesta" required>
-              <input type="text" class="form-control" name="respuesta4"  value="{{ old('respuesta') }}" id="id_respuesta" placeholder="Ingrese Respuesta" required>
+              <input type="text" class="form-control" name="verdadera"  value="{{ old('verdadera') }}" id="verdadera" placeholder="Ingrese Respuesta Correcta" required>
+              <input type="text" class="form-control" name="respuesta1"  value="{{ old('respuesta1') }}" id="respuesta1" placeholder="Ingrese Respuesta Incorrecta" required>
+              <input type="text" class="form-control" name="respuesta2"  value="{{ old('respuesta2') }}" id="respuesta2" placeholder="Ingrese Respuesta Incorrecta" required>
+              <input type="text" class="form-control" name="respuesta3"  value="{{ old('respuesta3') }}" id="respuesta3" placeholder="Ingrese Respuesta Incorrecta" required>
             </div>
 
             <div class="form-group">

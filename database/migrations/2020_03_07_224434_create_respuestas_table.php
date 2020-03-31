@@ -20,6 +20,9 @@ class CreateRespuestasTable extends Migration
             $table->string('respuesta1');
             $table->string('respuesta2');
             $table->string('respuesta3');
+
+            $table->unsignedBigInteger('preg_id')->nullable()->unsigned();
+            $table->foreign('preg_id')->references('id_preg')->on('preguntas');
         });
     }
 

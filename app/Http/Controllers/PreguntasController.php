@@ -16,7 +16,7 @@ class PreguntasController extends Controller
      */
     public function index()
     {
-      $preguntas = Pregunta::with('getRespuesta', 'getCategoria')->get();
+      $preguntas = Pregunta::with('getCategoria')->get();
         return view('/listadoPreguntas',
             [
                 'preguntas'=>$preguntas,
@@ -30,11 +30,9 @@ class PreguntasController extends Controller
      */
     public function create()
     {
-      //$respuestas = Respuesta::all();
       $categorias = Categorias::all();
       return view('formAgregarPregunta',
           [
-              //'respuestas'=>$respuestas,
               'categorias'=>$categorias
           ]);
     }
@@ -47,16 +45,18 @@ class PreguntasController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-        //$respuesta = new Respuesta;
-        //$respuesta->respuesta1 = $request['respusta1'
+        $respuesta = new Respuesta();
         $pregunta = new Pregunta();
         $categoria = Categorias::all();
         ######## validacion
         $validacion = $request->validate(
             [
-                'pregunta' => 'required|min:3|max:75',
-                'categoria'=>'min:3'
+                'pregunta' =>'required|min:3|max:75',
+                'categoria'=>'min:3',
+                'verdadera'=>'required|min:3',
+                'respuesta1'=>'required|min:3',
+                'respuesta2'=>'required|min:3',
+                'respuesta3'=>'required|min:3'
             ]
         );
         $pregunta->pregunta = request('pregunta');
@@ -103,7 +103,7 @@ class PreguntasController extends Controller
     {
       $Pregunta = Pregunta::find($request->input('id_preg'));
       $Pregunta->pregunta = $request->input('pregunta');
-      $Pregunta->pregunta = $request->input('cat_id');
+      $Pregunta->cat_id = $request->input('cat_id');
       $Pregunta->save();
       return redirect('/crud')
           ->with('mensaje', 'Pregunta '.$Pregunta->pregunta.' modificada con éxito');

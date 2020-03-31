@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pregunta extends Model
 {
   protected $primaryKey = "id_preg";
-  public function getRespuesta()
+  public function getRespuestas()
   {
       return $this->belongsTo('App\Respuesta', 'id_respuesta', 'id_respuesta');
   }
