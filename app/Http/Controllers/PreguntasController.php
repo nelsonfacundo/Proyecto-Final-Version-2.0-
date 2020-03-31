@@ -36,7 +36,6 @@ class PreguntasController extends Controller
           [
               //'respuestas'=>$respuestas,
               'categorias'=>$categorias
-
           ]);
     }
 
@@ -89,7 +88,8 @@ class PreguntasController extends Controller
     public function edit($id)
     {
       $pregunta = Pregunta::find($id);
-      return view('formModificarPregunta', [ 'pregunta'=>$pregunta ]);
+      $categorias = Categorias::all();
+      return view('formModificarPregunta', [ 'pregunta'=>$pregunta, 'categorias'=>$categorias ]);
     }
 
     /**
