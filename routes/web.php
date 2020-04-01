@@ -67,3 +67,11 @@ Route::get('/formModificarPregunta/{id_preg}', 'PreguntasController@edit')->midd
 Route::post('/modificarPregunta', 'PreguntasController@update')->middleware('Admin');
 Route::post('/agregarPregunta', 'PreguntasController@store')->middleware('Admin');
 Route::get('/crud/{id_preg}','PreguntasController@destroy')->middleware('Admin');
+
+
+
+################ INTENTO DE JUEGO ################
+Route::get('/juego',function()
+{
+    return view('juego');
+});

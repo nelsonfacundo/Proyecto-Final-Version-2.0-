@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/plantilla.css')}} ">
+    <script defer src="juego.js"></script>
     <script src="https://kit.fontawesome.com/86f3787a46.js" crossorigin="anonymous"></script>
     <title>@yield('title')</title>
 </head>
@@ -21,6 +22,7 @@
                         <li><a href="/ranking">ranking</a></li>
                         <li><a href="/perfil">perfil</a></li>
                         <li><a href="/faq">Faq</a></li>
+                        <li><a href="/juego">juego</a></li>
                         <li><a href="/contacto">CONTACTO</a></li>
                         @guest
                         <li class="nav-item">
