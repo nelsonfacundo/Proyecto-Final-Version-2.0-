@@ -18,13 +18,35 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style>
+        
+        body{
+            background-image: linear-gradient(to left, #8942A8, #BA382F);
+        }
+        @keyframes animacionFondo
+{
+  0%
+  {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100%
+  {
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+    </style>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                 Shovel knight Admin
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
