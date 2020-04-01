@@ -8,7 +8,6 @@
 
 @section('main')
 <div class="container">
-        <div id="main">
             <div class="main-container">   
                 <div class="intro">
                     <h1>Usuario</h1>
@@ -21,7 +20,7 @@
                     <div class="block-profile">
                         <h2>Informacion:</h2>
                         <ul>
-                            <li>username:<br> 
+                            <li>Username:<br> 
                                 <p> {{Auth::user()->username}}</p>
                             </li>
                             <li>Email :<br>
@@ -33,30 +32,16 @@
                         </ul>
                     </div>
                 </div>
-                <div class="logros">
-                    <h2>Logros</h2>
-                    <div class="block-logros">
+                <div class="ranking">
+                    <h2>#Ranking</h2>
+                    <div class="block-ranking">
                         <ul>
-                            <li><img src="img/logros/logro-1.jpg" alt=""></li>
-                            <li><img src="img/logros/logro-2.jpg" alt=""></li>
-                            <li><img src="img/logros/logro-3.jpg" alt=""></li>
-                            <li><img src="img/logros/logro-4.jpg" alt=""></li>
-                            <li><img src="img/logros/logro-5.jpg" alt=""></li>
-                            <li><img src="img/logros/logro-6.jpg" alt=""></li>
-                            <li><img src="img/logros/logro-7.jpg" alt=""></li>
-                            <li><img src="img/logros/logro-8.jpg" alt=""></li>
+                           <li><p>#324234</p></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="friend-list">
-                <h2>Lista de amigos</h2>
-                <div class="list">
-                     
-                </div>
-            </div>
         </div>
-    </div>
 
 @endsection
 

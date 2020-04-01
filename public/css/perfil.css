@@ -16,36 +16,25 @@
  }
 
 
- .container {
-   background-color:black;
-  width: 100%;
-   top: 65px;
 
- }
-
-
- /*CONTENIDO */
- 
- #main{
-  margin-top:100px;
-  background-color:white;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  .container{
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+  
   }
 
 
   .main-container{
-    width: 100%;
-    height:90vh;
-    margin-top:30px;
+    margin: 0 auto;
+    margin-top: 150px;
+    width: 80%;
     background: rgb(13, 6, 53);
     border-radius: 5px;
-  
   }
 
-/* CONTENEDOR TITULO - EDIT PERFIL */
+
+  /* CONTENEDOR TITULO - EDIT PERFIL */
   .intro{
     margin: 0 auto;
     width: 95%;
@@ -91,7 +80,7 @@
  }
 
   .profile img {
-    width:130px;
+    width:300px;
     float: left;
     margin-top:25px;
     margin-left:30px;
@@ -112,6 +101,7 @@
   .block-profile ul li {
     border-bottom: 1px solid white;
     margin-top:10px;
+    font-size: 20px;
     color:white;
   }
 
@@ -123,118 +113,76 @@
 
 /* BLOQUE LOGROS  */
 
-.logros{
-  width: 70%;
-  height: 300px;
+.ranking{
+  width: 80%;
   margin: 0 auto;  
   margin-top: 50px;
 }
 
-.logros h2 {
+.ranking h2 {
   text-align: center;
   font-size:40px;
   color:white;
   text-decoration: underline white;
 }
 
-.block-logros ul{
+.block-ranking{
+ 
+}
+
+.block-ranking ul{
   margin: 0  auto;
   margin-top:30px;
-  display: flex;
-  flex-flow: row wrap;  
+  text-decoration: none;
+}
+
+.block-ranking ul li {
+  text-align: center;
   list-style: none;
 }
 
-.block-logros ul li {
-  margin-left: 10px;
+.block-ranking ul li p  {
+  font-size: 50px;
+  color :white
 }
 
-
-/* LISTA DE AMIGOS*/
-
-.friend-list{
-  width: 100%;
-  height: 90vh;
-  float: right;
-  margin-top:30px;
-  background: rgb(13, 6, 53);
-  border-radius: 5px;
-}
-
-
- h2 {
-  text-align: center;
-  color: white;
-  font-size: 30px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
 /* MEDIAS QUERIES */
 
-  @media (min-width:900px) {
+@media (min-width:900px) {
 
 
-    .main-container{
-      width: 60%;
-      margin-left: 50px;
-      
-    }
-    .profile{
-      width: 90%;
-      margin: 0 auto;
-    }
+  .main-container{
+    width: 60%;
 
-    .logros{
-      width: 100%;
-    }
     
+  }
+  .profile{
+    width: 90%;
+    margin: 0 auto;
+  }
 
-    .block-logros ul{
-      flex-flow: row ;
-    }
+  
 
-    .block-logros ul li {
-      margin: 0 auto;
-    }
 
-    .friend-list{
-      width: 30%;
-      margin-left: auto;
-      margin-right: auto;
-     }
+}
+
+
+
+@media (max-width:1180px) {
+
+  .main-container{
+    width: 80%;
+    height: 120%;
+  
+  }
+
+  .profile{
+    width: 100%;
+    
   }
 
 
-  
-  @media (min-width:1180px) {
-
-    .main-container{
-      width: 45%;
-      margin-left: 50px;
-    }
-  
-    .friend-list{
-      width: 30%;
-      margin-left: auto;
-      margin-right: auto;
-     }
-
-  }
+}
