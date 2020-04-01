@@ -58,8 +58,8 @@
                               title: '¿Estás seguro que querés eliminar la categoría?',
                               icon: 'warning',
                               showCancelButton: true,
-                              confirmButtonColor: '#3085D6',
-                              cancelButtonColor: '#d33',
+                              confirmButtonColor: '#d33',
+                              cancelButtonColor: '#3085D6',
                               confirmButtonText: '<a href="/adminCategorias/{{$categoria->id_cat}}">Borrar categoría</a>'
                             })
                           })

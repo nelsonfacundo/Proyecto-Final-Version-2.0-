@@ -64,8 +64,8 @@
                           title: '¿Estás seguro que querés eliminar la pregunta?',
                           icon: 'warning',
                           showCancelButton: true,
-                          confirmButtonColor: '#3085D6',
-                          cancelButtonColor: '#d33',
+                          confirmButtonColor: '#d33',
+                          cancelButtonColor: '#3085D6',
                           confirmButtonText: '<a href="/crud/{{$pregunta->id_preg}}">Borrar Pregunta</a>'
                         })
                       })
