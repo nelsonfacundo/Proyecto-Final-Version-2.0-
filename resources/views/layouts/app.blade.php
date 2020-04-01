@@ -24,21 +24,6 @@
         body{
             background-image: linear-gradient(to left, #8942A8, #BA382F);
         }
-        @keyframes animacionFondo
-{
-  0%
-  {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100%
-  {
-    transform: translateY(-800px) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-
     </style>
 </head>
 <body>

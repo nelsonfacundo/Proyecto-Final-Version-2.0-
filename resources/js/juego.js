@@ -1,70 +1,4 @@
-<head>
-  <link href="{{  asset('css/juego.css')}}" rel="stylesheet">
-  <title>Trivia</title>
-  <script src="{{ asset('js/juego.js') }}" defer></script>
-</head>
-<body>
-<div id="header">
-            <div class="main-header">
-                <img src="img/logo.jpg" alt="logo">
-                <input type="checkbox" id="menu-bar">
-                 <label class="fas fa-bars" for="menu-bar"></label>
-                 <nav class="menu">
-                    <ul>
-                        <li><a href="/index">inicio</a></li>
-                        <li><a href="/ranking">ranking</a></li>
-                        <li><a href="/perfil">perfil</a></li>
-                        <li><a href="/faq">Faq</a></li>
-                        <li><a href="/juego">juego</a></li>
-                        <li><a href="/contacto">CONTACTO</a></li>
-                        @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                       <li> @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
-                                <li><a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                            </li>
-                                <li><form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </li>
-
-                    @endguest
-                </ul>
-            </li>
-            </div>
-        </div>
-    </nav>
-
-                    </ul>
-                 </nav>
-            </div>
-        </div>
-  <div class="container">
-    <div id="contenedor-preguntas" class="esconder">
-      <div id="pregunta">Pregunta</div>
-      <div id="boton-respuesta" class="btn-grid">
-        <button class="btn">Respuesta 1</button>
-        <button class="btn">Respuesta 2</button>
-        <button class="btn">Respuesta 3</button>
-        <button class="btn">Respuesta 4</button>
-      </div>
-    </div>
-    <div class="controles">
-      <button id="start-btn" class="start-btn btn">Comenzar</button>
-      <button id="next-btn" class="next-btn btn esconder">Siguiente</button>
-    </div>
-  </div>
-  <script> const botonComenzar = document.getElementById('start-btn')
+const botonComenzar = document.getElementById('start-btn')
 const botonSiguiente = document.getElementById('next-btn')
 const contenedorPreguntas = document.getElementById('contenedor-preguntas')
 const questionElement = document.getElementById('pregunta')
@@ -178,5 +112,3 @@ const pre = [
     ]
   }
 ]
-</script>
-</body>
