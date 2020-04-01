@@ -1,4 +1,4 @@
-@extends('layout.plantilla')
+@extends('layout.rankPlantilla')
 
     @section('title', 'faq')
 
@@ -16,7 +16,7 @@
               <h2>Preguntas frecuentes</h2>
           </section>
             <div id="cont">
-              
+
                   <br>
                     <ul>
                         <li class="pregunta">¿En qué consiste el juego?</li>
@@ -30,7 +30,7 @@
                         <li class="pregunta">¿Cómo llegar al primer puesto?</li>
                         <li class="respuesta">"Respondiendo la mayor cantidad de preguntas correctas!"
                     </ul>
-                </div>    
+                </div>
         </section>
       </div>
 

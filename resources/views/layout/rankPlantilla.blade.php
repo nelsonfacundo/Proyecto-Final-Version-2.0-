@@ -24,6 +24,13 @@
                       <span></span>
                       inicio
                     </a>
+                    <li><a href="/juego">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      juego
+                    </a>
                     </li>
                     <li><a href="/ranking">
                       <span></span>
@@ -87,42 +94,49 @@
 
         </main>
 
-        <div id="footer">
-              <img src="img/logo.jpg">
-              <div class="block-footer">
-                <ul>
-                  <li><a href="/index">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    INICIO</a></li>
-                  <li><a href="/ranking">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    RANKING</a></li>
-                  <li><a href="/perfil">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    PERFIL</a></li>
-                  <li><a href="/faq">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    FAQ</a></li>
-                  <li><a href="/contacto">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    CONTACTO</a></li>
-                </ul>
-              </div>
-        </div>
+        <footer>
+          <img src="img/logo.jpg">
+          <div class="block-footer">
+            <ul>
+              <li><a href="/index">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                INICIO</a></li>
+                <li><a href="/juego">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  juego
+                </a>
+              <li><a href="/ranking">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                RANKING</a></li>
+              <li><a href="/perfil">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                PERFIL</a></li>
+              <li><a href="/faq">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                FAQ</a></li>
+              <li><a href="/contacto">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                CONTACTO</a></li>
+            </ul>
+          </div>
+        </footer>
 </body>
 </html>

@@ -23,13 +23,13 @@
                 </div>
                 <div class="card-body">
                     <div class="col-md-6">
-                         <img src="/storage/avatares/{{ Auth::user()->avatar}}" width="250px" alt="foto de perfil" class="foto-perfil">  
+                         <img src="/storage/avatares/{{ Auth::user()->avatar}}" width="250px" alt="foto de perfil" class="foto-perfil">
                     </div>
                     <div class="col-md-6">
                         <div class="block-profile">
                             <h2>Informacion:</h2>
                                 <ul>
-                                    <li>Username:<br> 
+                                    <li>Username:<br>
                                         <p> {{Auth::user()->username}}</p>
                                     </li>
                                     <li>Email :<br>
@@ -46,13 +46,11 @@
                             {{ session('status') }}
                  </div>
                     @endif
-                    
+
                 </div>
             </div>
         </div>
     </div>
-    
+
 </div>
 @endsection
-
-

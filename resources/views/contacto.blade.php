@@ -1,4 +1,4 @@
-@extends('layout.plantilla')
+@extends('layout.rankPlantilla')
 
 <!DOCTYPE html>
 <html lang="en">

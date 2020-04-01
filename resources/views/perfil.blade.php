@@ -1,4 +1,4 @@
-@extends('layout.plantilla')
+@extends('layout.rankPlantilla')
 
     @section('title', 'perfil')
 
@@ -8,19 +8,19 @@
 
 @section('main')
 <div class="container">
-            <div class="main-container">   
+            <div class="main-container">
                 <div class="intro">
                     <h1>Usuario</h1>
                     <div class="edit">
                         <a href="#">Edit Profile</a>
                     </div>
-                </div>  
+                </div>
                 <div class="profile">
                 <img src="/storage/avatares/{{ Auth::user()->avatar}}" width="300px" alt="foto de perfil" class="foto-perfil">
                     <div class="block-profile">
                         <h2>Informacion:</h2>
                         <ul>
-                            <li>Username:<br> 
+                            <li>Username:<br>
                                 <p> {{Auth::user()->username}}</p>
                             </li>
                             <li>Email :<br>
@@ -44,6 +44,3 @@
         </div>
 
 @endsection
-
-
-
